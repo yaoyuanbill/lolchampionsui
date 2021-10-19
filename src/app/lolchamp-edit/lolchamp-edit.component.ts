@@ -10,7 +10,9 @@ import { RestApiService } from '../shared/rest-api.service';
 })
 export class LolchampEditComponent implements OnInit {
   id = this.actRoute.snapshot.params['id'];
-  championDetails: any = {};
+
+  championDetails!: LolChampion;
+
   constructor(
     public restApi: RestApiService,
     public actRoute: ActivatedRoute,
@@ -18,7 +20,7 @@ export class LolchampEditComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.restApi.getChampion(this.id).subscribe((data: {}) => {
+    this.restApi.getChampion(this.id).subscribe((data: LolChampion) => {
       this.championDetails = data;
     })
   }

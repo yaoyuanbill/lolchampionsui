@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { LolChampion } from '../shared/lol-champion';
 import { RestApiService } from '../shared/rest-api.service';
 
 @Component({
@@ -20,7 +21,7 @@ export class LolchampCreateComponent implements OnInit {
   }
 
   addChampion() {
-    this.restApi.createChampion(this.championDetails).subscribe((data: {}) => {
+    this.restApi.createChampion(this.championDetails).subscribe((data: LolChampion) => {
       this.router.navigate(['/lolchamp-list'])
     })
   }

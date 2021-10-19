@@ -22,8 +22,8 @@ export class RestApiService {
   }
 
   //HttpClient api get() method
-  getChampions(): Observable<LolChampion> {
-    return this.http.get<LolChampion>(this.apiUrl)
+  getChampions(): Observable<LolChampion[]> {
+    return this.http.get<LolChampion[]>(this.apiUrl)
       .pipe(
         retry(1),
         catchError(this.handleError)

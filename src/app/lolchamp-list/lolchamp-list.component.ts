@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { LolChampion } from '../shared/lol-champion';
 import { RestApiService } from "../shared/rest-api.service";
 
 @Component({
@@ -9,7 +10,8 @@ import { RestApiService } from "../shared/rest-api.service";
 
 export class LolchampListComponent implements OnInit {
 
-  Champions: any = [];
+  champions: LolChampion[] = [];
+
   constructor(
     public restApi: RestApiService
     ) { }
@@ -19,8 +21,8 @@ export class LolchampListComponent implements OnInit {
   }
 
   loadChampions() {
-    return this.restApi.getChampions().subscribe((data: {}) => {
-        this.Champions = data;
+    return this.restApi.getChampions().subscribe((data:LolChampion[]) => {
+        this.champions = data;
     })
   }
 

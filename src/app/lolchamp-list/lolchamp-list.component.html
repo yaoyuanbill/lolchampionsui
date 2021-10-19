@@ -1,4 +1,4 @@
-<div *ngIf="Champions.length != 0" >
+<div *ngIf="champions.length != 0" >
   <div class="col-md-12">
     <table class="table table-bordered">
       <thead>
@@ -12,7 +12,7 @@
         </tr>
       </thead>
       <tbody>
-        <tr *ngFor="let champ of Champions">
+        <tr *ngFor="let champ of champions">
           <td>{{champ.id}}</td>
           <td>{{champ.name}}</td>
           <td>{{champ.difficulty}}</td>
