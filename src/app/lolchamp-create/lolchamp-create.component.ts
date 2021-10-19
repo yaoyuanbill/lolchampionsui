@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { RestApiService } from '../shared/rest-api.service';
 
 @Component({
   selector: 'app-lolchamp-create',
@@ -7,9 +9,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LolchampCreateComponent implements OnInit {
 
-  constructor() { }
+  @Input() championDetails = { id:0, name:"", difficulty:"", role:"", imageUrl:""}
+
+  constructor(
+    public restApi: RestApiService,
+    public router: Router
+  ) { }
 
   ngOnInit(): void {
+  }
+
+  addChampion() {
+    this.restApi.createChampion(this.championDetails).subscribe((data: {}) => {
+      this.router.navigate(['/lolchamp-list'])
+    })
   }
 
 }

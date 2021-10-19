@@ -57,7 +57,7 @@ export class RestApiService {
   }
 
   // HttpClient API post() method
-  createShipper(champ:LolChampion): Observable<LolChampion> {
+  createChampion(champ:LolChampion): Observable<LolChampion> {
     return this.http.post<LolChampion>(this.apiUrl + '',JSON.stringify(champ),this.httpOptions)
       .pipe(
         retry(1),

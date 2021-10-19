@@ -7,6 +7,7 @@
           <th scope="col">Name</th>
           <th scope="col">Difficulty</th>
           <th scope="col">Role</th>
+          <th scope="col">Mugshot</th>
           <th scope="col">Action</th>
         </tr>
       </thead>
@@ -16,6 +17,9 @@
           <td>{{champ.name}}</td>
           <td>{{champ.difficulty}}</td>
           <td>{{champ.role}}</td>
+          <td>
+            <img src={{champ.imageUrl}} height=75>
+          </td>
           <td>
             <a [routerLink]="['/lolchamp-edit/', champ.id]" class="btn btn-primary btn-sm float-right">Edit</a>&nbsp;
             <a [routerLink]="" (click)="deleteChampion(champ.id)" class="btn btn-danger btn-sm float-right">Delete</a>

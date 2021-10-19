@@ -7,6 +7,7 @@ import { AppComponent } from './app.component';
 import { LolchampListComponent } from './lolchamp-list/lolchamp-list.component';
 import { LolchampCreateComponent } from './lolchamp-create/lolchamp-create.component';
 import { LolchampEditComponent } from './lolchamp-edit/lolchamp-edit.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -17,6 +18,7 @@ import { LolchampEditComponent } from './lolchamp-edit/lolchamp-edit.component';
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     AppRoutingModule,
     FormsModule
   ],

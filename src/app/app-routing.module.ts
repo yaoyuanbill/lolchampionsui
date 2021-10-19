@@ -5,11 +5,11 @@ import { LolchampEditComponent } from './lolchamp-edit/lolchamp-edit.component';
 import { LolchampListComponent } from './lolchamp-list/lolchamp-list.component';
 
 const routes: Routes = [
-  {path: '', pathMatch: 'full', redirectTo: 'lolchamp-list'},
-  {path: 'lolchamp-create', component: LolchampCreateComponent},
-  {path: 'lolchamp-list', component: LolchampListComponent},
-  {path: 'lolchamp-edit', component: LolchampEditComponent},
-  {path: "**", component: LolchampListComponent }
+  { path: '', pathMatch: 'full', redirectTo: 'lolchamp-list' },
+  { path: 'lolchamp-create', component: LolchampCreateComponent },
+  { path: 'lolchamp-list', component: LolchampListComponent },
+  { path: 'lolchamp-edit/:id', component: LolchampEditComponent },
+  { path: "**", component: LolchampListComponent }
 ];
 
 @NgModule({

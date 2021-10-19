@@ -4,6 +4,6 @@
 
 export const environment = {
   production: false,
-  apiUrl: "http://localhost:8080/api/v1/lolchampion"
-  //apiUrl: "http://franks-lolchampion-demo-franks-lolchampion-demo.emeadocker65.conygre.com/swagger-ui/"
+  //apiUrl: "http://localhost:8080/api/v1/lolchampion/"
+  apiUrl: "http://franks-lolchampion-demo-franks-lolchampion-demo.emeadocker65.conygre.com/api/v1/lolchampion/"
 };
