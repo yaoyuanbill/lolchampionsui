@@ -10,7 +10,14 @@ import { RestApiService } from '../shared/rest-api.service';
 })
 export class LolchampCreateComponent implements OnInit {
 
-  @Input() championDetails = { id:0, name:"", difficulty:"", role:"", imageUrl:""}
+  @Input() championDetails = {
+    id:0,
+    name:"",
+    difficulty:"",
+    role:"",
+    imageUrl:"",
+    dateCreated:new Date() // this defaults to the current date and time
+  }
 
   constructor(
     public restApi: RestApiService,

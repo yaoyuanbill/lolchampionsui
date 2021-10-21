@@ -8,6 +8,7 @@
           <th scope="col">Difficulty</th>
           <th scope="col">Role</th>
           <th scope="col">Mugshot</th>
+          <th scope="col">Date Enrolled</th>
           <th scope="col">Action</th>
         </tr>
       </thead>
@@ -20,6 +21,7 @@
           <td>
             <img src={{champ.imageUrl}} height=75>
           </td>
+          <td>{{champ.dateCreated | date}}</td>
           <td>
             <a [routerLink]="['/lolchamp-edit/', champ.id]" class="btn btn-primary btn-sm float-right">Edit</a>&nbsp;
             <a [routerLink]="" (click)="deleteChampion(champ.id)" class="btn btn-danger btn-sm float-right">Delete</a>

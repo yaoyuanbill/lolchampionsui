@@ -4,6 +4,7 @@ export class LolChampion {
   name: string;
   role: string;
   imageUrl: string;
+  dateCreated: Date;
 
   constructor() {
     this.id = 0;
@@ -11,5 +12,6 @@ export class LolChampion {
     this.name="";
     this.role="";
     this.imageUrl="";
+    this.dateCreated = new Date();
   }
 }

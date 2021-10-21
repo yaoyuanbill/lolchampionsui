@@ -40,7 +40,7 @@ export class RestApiService {
   }
   // HttpClient API put() method
   updateChampion(id:number, champ:LolChampion): Observable<LolChampion> {
-    return this.http.put<LolChampion>(this.apiUrl + '', JSON.stringify(champ), this.httpOptions)
+    return this.http.put<LolChampion>(this.apiUrl, JSON.stringify(champ), this.httpOptions)
     .pipe(
       retry(1),
       catchError(this.handleError)
@@ -67,6 +67,7 @@ export class RestApiService {
 
   // Error handling
   handleError(error:any) {
+    console.log("handling an error now")
     let errorMessage = '';
     if(error.error instanceof ErrorEvent) {
       // Get client-side error

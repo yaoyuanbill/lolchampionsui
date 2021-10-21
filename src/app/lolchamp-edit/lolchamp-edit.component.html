@@ -21,6 +21,12 @@
       <label class="control-label col-md-12">Image URL</label>
       <input type="text" [(ngModel)]="championDetails.imageUrl" class="form-control">
     </div>
+
+    <div class="form-group row">
+      <label class="control-label col-md-12">Date Enrolled</label>
+      <input type="text" [(ngModel)]="championDetails.dateCreated" class="form-control">
+    </div>
+
     <div class="form-group">
       <button class="btn btn-success btn-lg btn-block" (click)="updateChampion()">Save Champion</button>
     </div>
