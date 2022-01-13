@@ -22,7 +22,7 @@ pipeline {
         OPENSHIFT_CREDS = credentials('openshiftCreds')
       }
       steps {
-        sh "oc login -u ${OPENSHIFT_CREDS_USR} -p ${OPENSHIFT_CREDS_PSW}"
+        sh "oc login https://localhost:8443 -u ${OPENSHIFT_CREDS_USR} -p ${OPENSHIFT_CREDS_PSW}"
         sh "oc project ${openshiftProjectName} || oc new-project ${openshiftProjectName}"
         sh "oc delete all --selector app=${uiName} || echo 'Unable to delete all previous openshift resources'"
         sh "oc new-app -l version=${version} ${dockerImageTag}"
